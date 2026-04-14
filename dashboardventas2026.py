@@ -2,18 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Assuming df, sales_profit_by_year, sales_profit_by_month, sales_profit_by_region are already loaded in the environment or can be reloaded.
-# For a standalone Streamlit app, you'd typically load data inside the app.
-# For simplicity in this Colab context, we will use the 'df' that has been processed.
+# --- Data Loading ---
+# In a standalone Streamlit app, you would load your data directly
+# using the file path.
+file_path = 'datos/SalidaVentas.xlsx'
+df = pd.read_excel(file_path)
 
-# Dummy data loading for standalone app - in Colab, 'df' is already loaded and processed.
-# If this were a standalone app, you'd load your Excel file here:
-# file_path = 'datos/SalidaVentas.xlsx'
-# df = pd.read_excel(file_path)
-
-# --- Data Cleaning and Aggregation (replicated for standalone app context) ---
-# This section assumes 'df' is loaded fresh or re-executed
-
+# --- Data Cleaning and Aggregation ---
 # Ensure 'Order Date' is datetime
 df['Order Date'] = pd.to_datetime(df['Order Date'])
 
